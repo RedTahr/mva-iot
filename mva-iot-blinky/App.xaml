@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="mva_iot_blinky.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:mva_iot_blinky"
+    RequestedTheme="Light">
+
+</Application>

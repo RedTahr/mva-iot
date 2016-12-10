@@ -1,1 +1,5 @@
-*.dll
+/mva-iot-blinky/obj/*
+/mva-iot-blinky/obj
+/mva-iot-blinky/obj/x86/Debug
+/mva-iot-blinky/bin/*
+*.lock.*
