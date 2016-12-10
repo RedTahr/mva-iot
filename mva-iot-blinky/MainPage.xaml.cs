@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Gpio;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,16 +26,30 @@ namespace mva_iot_blinky
         public MainPage()
         {
             this.InitializeComponent();
+
+			Loaded += MainPage_Loaded;
         }
+
+		GpioPin pin;
+
+		private void MainPage_Loaded(object sender, RoutedEventArgs e)
+		{
+			var controller = GpioController.GetDefault();
+			// could ask for the lightening provider if you wanted, which is for fast stuff
+
+			pin = controller.OpenPin(26);
+			pin.SetDriveMode(GpioPinDriveMode.Output);
+			pin.Write(GpioPinValue.Low);
+		}
 
 		private void ToggleLed_Checked(object sender, RoutedEventArgs e)
 		{
-
+			pin.Write(GpioPinValue.High);
 		}
 
 		private void ToggleLed_Unchecked(object sender, RoutedEventArgs e)
 		{
-
+			pin.Write(GpioPinValue.Low);
 		}
 	}
 }
