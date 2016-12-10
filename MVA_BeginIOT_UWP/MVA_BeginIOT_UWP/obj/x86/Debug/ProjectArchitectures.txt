@@ -1,0 +1,1 @@
+d:\VS_Projects\MVA_BeginIOT_UWP\MVA_BeginIOT_UWP\MVA_BeginIOT_UWP.csproj;x86
